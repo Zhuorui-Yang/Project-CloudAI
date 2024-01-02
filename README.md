@@ -31,9 +31,7 @@ Project CloudAI是一个开源的轻量级AI助手部署工具，目的是让没
     - libxslt
     - lxml python
     - 一个微信公众号（无需微信认证，有基础的接收消息和被动回复功能即可）
-    - 
 - **2  项目结构**
-- 
     - **2.1 项目源码结构**
         
         项目根目录默认包含本项目的所有.py文件。如果开发者只需要使用其中的特定功能，则可以适当解耦和删减根目录文件。例如，如果只需要使用Gemini的文字问答功能，只需要将main.py、handle.py、receive.py和reply.py文件部署到云服务器的同一路径下，然后删减源码中的无效引用即可。此处介绍四个重要的.py文件：
@@ -57,10 +55,18 @@ Project CloudAI是一个开源的轻量级AI助手部署工具，目的是让没
 
         ![WeChatResponse](https://private-user-images.githubusercontent.com/82684293/293689304-e637ebe5-6e9a-4dee-bae6-1497026bba0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQxOTc4MTAsIm5iZiI6MTcwNDE5NzUxMCwicGF0aCI6Ii84MjY4NDI5My8yOTM2ODkzMDQtZTYzN2ViZTUtNmU5YS00ZGVlLWJhZTYtMTQ5NzAyNmJiYTBlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTAyVDEyMTE1MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQzZTEwZWUyZDVmN2UzZGM5ZmJmMGRkYzk4MWExYmI5YmJkN2MwMjNiYjFkMWIyYjIxYmU5MGU0OTM4MDEwOTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.35d3PlXli8R9-olyTTrgR8ERPUsdAH5tP2mdKiw3obw)
         
-    - **3  云服务器端配置**
+- **3  云服务器端配置**
     
-        本项目的代码结构非常简单，只需要将指定功能所需要的文件添加到同一指定路径下，并通过下述命令启动:
-
-        python main.py 80
-        
-        启动后将会挂起一个监听80端口的进程，用于接收来自微信服务器的消息。注意：由于微信API开发规范，端口号只能且必须是80。
+    本项目的代码结构非常简单，只需要将指定功能所需要的文件添加到同一指定路径下，并通过下述命令启动:
+    
+    ```bash
+    python main.py 80
+    ```
+    
+    启动后将会挂起一个监听80端口的进程，用于接收来自微信服务器的消息。注意：由于微信API开发规范，端口号只能且必须是80。
+    
+- **4  微信公众号配置**
+    
+    如果开发者只配置基本的消息收发功能，那么便可以跳过Token校验，只需要部署IP白名单：
+    
+    ![Untitled](Project%20CloudAI%20%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3%2070ead7413550452194a47d24650c1b32/Untitled%202.png)
