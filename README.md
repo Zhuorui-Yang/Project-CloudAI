@@ -24,7 +24,7 @@ Project CloudAI是一个开源的轻量级AI助手部署工具，目的是让没
     
     部署本项目所需要的前置环境如下：
     
-    - 一台可以请求google-apis的云服务器（例：腾讯云海外服务器）
+    - 一台可以请求google-apis的云服务器
     - Python3环境（或Python2.7以上，但需要对源码进行向下兼容）
     - web.py
     - libxml2
