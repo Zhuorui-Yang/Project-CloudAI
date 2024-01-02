@@ -30,6 +30,7 @@ Project CloudAI是一个开源的轻量级AI助手部署工具，目的是让没
     - libxml2
     - libxslt
     - lxml python
+    - 对应服务供应商的API Key
     - 一个微信公众号（无需微信认证，有基础的接收消息和被动回复功能即可）
       
 - **2  项目结构**
